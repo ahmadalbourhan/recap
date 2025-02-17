@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Date and Time</h1>
+    <p id="date-1"></p>
+    <br />
+    <p id="date-2"></p>
+    <br />
+    <p id="date-3"></p>
+  </body>
+  <script>
+    const date = new Date();
+    const year = date.getFullYear(); // Current year
+    const month = date.getMonth(); // Current month (0-11)
+    const day = date.getDate(); // Day of the month (1-31)
+    const hours = date.getHours(); // Hours (0-23)
+    const minutes = date.getMinutes(); // Minutes (0-59)
+    const seconds = date.getSeconds(); // Seconds (0-59)
+    const milliseconds = date.getMilliseconds(); // Milliseconds (0-999)
+
+    document.getElementById(
+      "date-1"
+    ).innerHTML = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}.${milliseconds}`;
+
+    // console.log(date);
+
+    document.getElementById("date-2").innerHTML = date;
+
+    document.getElementById("date-3").innerHTML = date.toDateString();
+  </script>
+</html>
