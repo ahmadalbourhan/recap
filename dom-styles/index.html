@@ -4,7 +4,7 @@
     <title>DOM Styling Example</title>
   </head>
   <body>
-    <h1 id="heading">DOM</h1>
+    <h1 id="heading" style="background-color: aqua">DOM</h1>
     <button id="btnHeading">Toggle To Violet</button>
     <div id="myDiv" class="active">This is a div</div>
     <button id="myButton">Toggle Class</button>
@@ -57,6 +57,7 @@
 
       btnHeading.addEventListener("click", () => {
         heading.style.setProperty("color", "violet", "important");
+        heading.style.removeProperty("background-color");
       });
     </script>
   </body>
