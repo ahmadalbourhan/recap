@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Styling Example</title>
+  </head>
+  <body>
+    <h1 id="heading">DOM</h1>
+    <button id="btnHeading">Toggle To Violet</button>
+    <div id="myDiv" class="active">This is a div</div>
+    <button id="myButton">Toggle Class</button>
+
+    <br />
+
+    <p id="myParagraph" style="color: red; border-radius: 5px">
+      This is a red paragraph.
+    </p>
+
+    <button id="btn">Click to change Color of above paragraph</button>
+
+    <script>
+      const div = document.getElementById("myDiv");
+      const button = document.getElementById("myButton");
+      const paragraph = document.getElementById("myParagraph");
+      const btn = document.getElementById("btn");
+      const btnHeading = document.getElementById("btnHeading");
+      const heading = document.getElementById("heading");
+
+      button.style.backgroundColor = "blue";
+      button.style.color = "white";
+      button.style.fontSize = "16px";
+      button.style.padding = "10px";
+      button.style.borderRadius = "5px";
+      button.style.cursor = "pointer";
+      button.style.border = "none";
+      button.style.margin = "10px";
+
+      function toggleClassAndColor() {
+        div.classList.toggle("active");
+        div.classList.toggle("inactive");
+        // Check if the "active" class is present and change the background color accordingly
+        if (div.classList.contains("active")) {
+          div.style.backgroundColor = "blue";
+          div.style.padding = "10px";
+          div.style.borderRadius = "5px";
+        } else {
+          div.style.backgroundColor = "red";
+          div.style.padding = "20px";
+          div.style.borderRadius = "10px";
+        }
+      }
+
+      button.addEventListener("click", toggleClassAndColor);
+
+      btn.addEventListener("click", () => {
+        paragraph.setAttribute("style", "color: blue; font-size: 18px;");
+      });
+
+      btnHeading.addEventListener("click", () => {
+        heading.style.setProperty("color", "violet", "important");
+      });
+    </script>
+  </body>
+</html>
